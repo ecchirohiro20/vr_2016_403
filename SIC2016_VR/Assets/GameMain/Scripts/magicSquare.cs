@@ -10,6 +10,9 @@ public class magicSquare : MonoBehaviour
 
     public AudioClip audiclip;
     AudioSource audiosource;
+
+    private RaycastHit Hit;
+    private Vector3 target;
     // Use this for initialization
     void Start()
     {
@@ -47,8 +50,16 @@ public class magicSquare : MonoBehaviour
             Debug.Log("通過した");
             if (emit != null)
             {
-
-                GameObject obj = (GameObject)Instantiate(emit, transform.position, Quaternion.LookRotation(transform.forward));
+                if(Physics.SphereCast(transform.position, transform.lossyScale.x/2, transform.forward,out Hit, 20))
+                {
+                    target = Hit.transform.position - transform.position;
+                    target.Normalize();
+                }else
+                {
+                    target = transform.forward;
+                }
+                
+                GameObject obj = (GameObject)Instantiate(emit, transform.position, Quaternion.LookRotation(target));
                 obj.transform.localScale *= 3.0f * transform.lossyScale.x;
 
                 obj = (GameObject)Instantiate(eff, transform.position, transform.rotation);
