@@ -29,6 +29,40 @@ public class magicSquare : MonoBehaviour
             obj.transform.localScale *= 3.0f * transform.lossyScale.x;
         }
 
+        if (Input.GetMouseButton(0))
+        {
+            Emit();
+        }
+
+    }
+
+    void Emit()
+    {
+
+        
+        if (emit != null)
+        {
+            if (Physics.BoxCast(transform.position,new Vector3(transform.lossyScale.x*200,transform.lossyScale.y*200,1.0f),transform.forward,out Hit,transform.rotation,10000,LayerMask.NameToLayer("enemy")))
+            {
+                target = Hit.transform.position - transform.position;
+                target.Normalize();
+                Debug.Log("通過した");
+            }
+            else
+            {
+                target = transform.forward;
+            }
+
+            GameObject obj = (GameObject)Instantiate(emit, transform.position, Quaternion.LookRotation(target));
+            obj.transform.localScale *= 3.0f * transform.lossyScale.x;
+
+            obj = (GameObject)Instantiate(eff, transform.position, transform.rotation);
+            obj.transform.localScale *= 3.0f * transform.lossyScale.x;
+        }
+
+        audiosource.PlayOneShot(audiclip);
+        Destroy(transform.gameObject);
+
     }
     void OnTriggerEnter(Collider col)
     {
@@ -46,30 +80,6 @@ public class magicSquare : MonoBehaviour
         //触れたものが魔方陣の奥方向へ移動しているか
         Vector3 moveV = r.moveVector.normalized;
         if (Vector3.Dot(front, moveV) > 0.5f)
-        {
-            Debug.Log("通過した");
-            if (emit != null)
-            {
-                if(Physics.SphereCast(transform.position, transform.lossyScale.x/2, transform.forward,out Hit, 20))
-                {
-                    target = Hit.transform.position - transform.position;
-                    target.Normalize();
-                }else
-                {
-                    target = transform.forward;
-                }
-                
-                GameObject obj = (GameObject)Instantiate(emit, transform.position, Quaternion.LookRotation(target));
-                obj.transform.localScale *= 3.0f * transform.lossyScale.x;
-
-                obj = (GameObject)Instantiate(eff, transform.position, transform.rotation);
-                obj.transform.localScale *= 3.0f * transform.lossyScale.x;
-            }
-            audiosource.PlayOneShot(audiclip);
-            Destroy(transform.gameObject);
-
-        }
+            Emit();
     }
-
-
 }
