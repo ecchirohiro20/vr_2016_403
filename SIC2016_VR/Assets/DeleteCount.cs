@@ -8,8 +8,9 @@ public class DeleteCount : MonoBehaviour {
     int deleteCount;
 	// Use this for initialization
 	void Start () {
-        deleteCount = 1;
+        deleteCount = 0;
         GetComponent<TextMesh>().text = "倒した数:" + deleteCount.ToString();
+        UI.text = "倒した数:" + deleteCount.ToString();
     }
 
     // Update is called once per frame

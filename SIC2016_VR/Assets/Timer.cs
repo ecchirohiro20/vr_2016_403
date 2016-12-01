@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour {
 	void Start () {
         timer = 0;
         GetComponent<TextMesh>().text = "残り時間:" + (60 - (int)timer).ToString();
+        UI.text = "残り時間:" + (60 - (int)timer).ToString();
     }
 
     // Update is called once per frame
