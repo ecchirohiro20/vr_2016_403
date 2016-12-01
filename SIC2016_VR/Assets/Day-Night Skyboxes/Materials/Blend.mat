@@ -219,7 +219,7 @@ Material:
       second: 0
     - first:
         name: _SkyBlend
-      second: 0.0037253287
+      second: 0.42710462
     - first:
         name: _SmoothnessTextureChannel
       second: 0

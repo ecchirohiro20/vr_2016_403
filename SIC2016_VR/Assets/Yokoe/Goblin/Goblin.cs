@@ -11,7 +11,7 @@ public class Goblin : MonoBehaviour
 
 	private bool deathFlag;             //死んだとき
 	private float deathTime;            //死んだら動く
-	private float deathTimeMax = 0.1f;  //消えるまでの最大時間
+	private float deathTimeMax = 3.0f;  //消えるまでの最大時間
 
 	private DeleteCount deleteCount;
 
@@ -137,6 +137,8 @@ public class Goblin : MonoBehaviour
 			if( deathTimeMax < deathTime ) {
 				GoblinManager.goblinLife--;
 				deleteCount.CountPlus();
+				fireEffect.transform.parent = null;
+				Destroy(fireEffect.gameObject, 2.0f);
 				Destroy( this.gameObject );
 			}
 		}
