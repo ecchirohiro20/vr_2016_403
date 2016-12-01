@@ -4,10 +4,11 @@ using System.Collections;
 public class DeleteCount : MonoBehaviour {
 
     public TextMesh mesh;
+    public TextMesh UI;
     int deleteCount;
 	// Use this for initialization
 	void Start () {
-        deleteCount = 0;
+        deleteCount = 1;
         GetComponent<TextMesh>().text = "倒した数:" + deleteCount.ToString();
     }
 
@@ -20,5 +21,6 @@ public class DeleteCount : MonoBehaviour {
         deleteCount++;
         GetComponent<TextMesh>().text = "倒した数:" + deleteCount.ToString();
         mesh.text = "倒した数:" + deleteCount.ToString();
+        UI.text = "倒した数:" + deleteCount.ToString();
     }
 }
