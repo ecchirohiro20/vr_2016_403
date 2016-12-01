@@ -10784,7 +10784,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010744827350}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -11333,7 +11333,6 @@ MonoBehaviour:
   soundAttack: {fileID: 0}
   soundDie: {fileID: 82000010245969344}
   fireEffect: {fileID: 1000010744827350}
-  sordEffect: {fileID: 1000010519524580}
 --- !u!114 &114000011020014356
 MonoBehaviour:
   m_ObjectHideFlags: 1
