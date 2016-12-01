@@ -4,13 +4,13 @@ using System.Collections;
 public class GoblinManager : MonoBehaviour
 {
 	public GameObject goblin;           //ゴブリン
-	private float createTime = 0.5f;    //生成する時間
+	private float createTime = 1.0f;    //生成する時間
 	private float createCount;          //生成するカウント
 	private float createPosX;           //生成する場所X
 	private float createPosZ;           //生成する場所Z
 
 	static public int goblinLife;       //今いてるゴブリンの数
-	private int goblinLifeMax = 100;     //出てこれるゴブリンの数
+	private int goblinLifeMax = 20;     //出てこれるゴブリンの数
 
     public Transform half;
 

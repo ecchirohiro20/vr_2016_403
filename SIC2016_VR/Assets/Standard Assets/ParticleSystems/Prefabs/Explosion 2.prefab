@@ -140,6 +140,7 @@ GameObject:
   - 4: {fileID: 4000014236702184}
   - 114: {fileID: 114000013868924600}
   - 114: {fileID: 114000013697181232}
+  - 82: {fileID: 82000012401819798}
   m_Layer: 0
   m_Name: Explosion 2
   m_TagString: Untagged
@@ -289,6 +290,95 @@ Transform:
   - {fileID: 4000013435479516}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!82 &82000012401819798
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013571989738}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a1e681eef0df7b7428b79078ba1474a3, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 10
+  MaxDistance: 100
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0.1
+      value: 0.6166667
+      inSlope: -1.2964092
+      outSlope: -1.2964092
+      tangentMode: 0
+    - time: 0.38876402
+      value: 0.30833334
+      inSlope: -0.7377836
+      outSlope: -0.7377836
+      tangentMode: 0
+    - time: 0.5483146
+      value: 0.175
+      inSlope: -0.94316006
+      outSlope: -0.94316006
+      tangentMode: 0
+    - time: 0.8449438
+      value: 0.091666676
+      inSlope: -0.15631224
+      outSlope: -0.15631224
+      tangentMode: 0
+    - time: 1
+      value: 0.00833334
+      inSlope: -0.10003988
+      outSlope: -0.10003988
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0.5833334
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114000013697181232
 MonoBehaviour:
   m_ObjectHideFlags: 1

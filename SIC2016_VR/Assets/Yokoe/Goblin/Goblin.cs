@@ -56,10 +56,10 @@ public class Goblin : MonoBehaviour
 	{
         if (GameModeManager.GetMode() == GameModeManager.GAMEMODE.FINISH)
         {
-            deathFlag = true;
+            Destroy(this.gameObject);
         }
 
-		DestroyGoblin();  //死ぬ処理
+        DestroyGoblin();  //死ぬ処理
 
 		if( stopFlag == true ) return;
 
