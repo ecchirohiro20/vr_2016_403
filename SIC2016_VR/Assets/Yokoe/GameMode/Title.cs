@@ -14,7 +14,7 @@ public class Title : MonoBehaviour
 	void Update()
 	{
 
-	}
+    }
 
 	void OnCollisionEnter( Collision collision )
 	{

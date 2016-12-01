@@ -75,6 +75,7 @@ GameObject:
   - 114: {fileID: 114000011812699694}
   - 82: {fileID: 82000010562860294}
   - 82: {fileID: 82000012899586044}
+  - 114: {fileID: 114000010154991672}
   m_Layer: 0
   m_Name: FireBird 1
   m_TagString: Magic
@@ -321,6 +322,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114000010154991672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012692719448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eaff8d0870708f4d97902a25fae0ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000010372762032
 MonoBehaviour:
   m_ObjectHideFlags: 1
