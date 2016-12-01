@@ -11,7 +11,7 @@ public class Goblin : MonoBehaviour
 
 	private bool deathFlag;             //死んだとき
 	private float deathTime;            //死んだら動く
-	private float deathTimeMax = 1.0f;  //消えるまでの最大時間
+	private float deathTimeMax = .0f;  //消えるまでの最大時間
 
 	private DeleteCount deleteCount;
 
@@ -96,7 +96,7 @@ public class Goblin : MonoBehaviour
 				soundAttack.PlayOneShot( soundDie.clip );
 				deathFlag = true;
 				stopFlag = true;
-				fireEffect.SetActive( true );
+				//fireEffect.SetActive( true );
         break;
 		}
 	}
@@ -112,7 +112,7 @@ public class Goblin : MonoBehaviour
 				anim.Play( "death" );
 				deathFlag = true;
 				stopFlag = true;
-				fireEffect.SetActive( true );
+				//fireEffect.SetActive( true );
 
 				break;
 		}
@@ -125,7 +125,7 @@ public class Goblin : MonoBehaviour
 				anim.Play( "death" );
 				deathFlag = true;
 				stopFlag = true;
-				fireEffect.SetActive( true );
+				//fireEffect.SetActive( true );
 				break;
 		}
 	}
@@ -137,7 +137,8 @@ public class Goblin : MonoBehaviour
 			if( deathTimeMax < deathTime ) {
 				GoblinManager.goblinLife--;
 				deleteCount.CountPlus();
-				Destroy( this.gameObject );
+                Destroy(Instantiate(fireEffect, transform.position, transform.rotation),4.0f);
+                Destroy( this.gameObject );
 			}
 		}
 	}
