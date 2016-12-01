@@ -13,8 +13,11 @@ public class Title : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
-    }
+		if(Input.GetKeyDown(KeyCode.S))
+        {
+			GameModeManager.SetSceneMode(GameModeManager.GAMEMODE.MAIN);
+		}
+	}
 
 	void OnCollisionEnter( Collision collision )
 	{

@@ -73,6 +73,15 @@ public class GameModeManager : MonoBehaviour
 	static public void SetSceneMode( GAMEMODE setMode )
 	{
 		mode = setMode;
+		//MAIN切替時に魔法陣を削除する
+		if(setMode == GAMEMODE.MAIN)
+		{
+			magicSquare[] objects = FindObjectsOfType<magicSquare>();
+			foreach(magicSquare obj in objects)
+			{
+				Destroy(obj.gameObject);
+			}
+		}
 	}
     static public GAMEMODE GetMode()
     {
