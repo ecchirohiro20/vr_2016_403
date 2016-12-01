@@ -2482,7 +2482,7 @@ GameObject:
   - 82: {fileID: 82000013436415778}
   - 82: {fileID: 82000012936005664}
   - 82: {fileID: 82000010930162276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GOBLIN
   m_TagString: Goblin
   m_Icon: {fileID: 0}
