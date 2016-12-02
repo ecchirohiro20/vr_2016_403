@@ -42,9 +42,9 @@ public class magicSquare : MonoBehaviour
         
         if (emit != null)
         {
-            if (Physics.BoxCast(transform.position,new Vector3(transform.lossyScale.x,transform.lossyScale.y * 3,1.0f),transform.forward,out Hit,transform.rotation,10000,1 << LayerMask.NameToLayer("enemy")))
+            if (Physics.BoxCast(transform.position,new Vector3(transform.lossyScale.x,transform.lossyScale.y * 15 + 8,1.0f),transform.forward,out Hit, Quaternion.LookRotation(transform.forward), 10000,1 << LayerMask.NameToLayer("enemy")))
             {
-                target = Hit.transform.position - transform.position;
+                target = Hit.point - transform.position;
                 target.Normalize();
                 Debug.Log("通過した");
             }

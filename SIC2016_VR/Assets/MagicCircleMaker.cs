@@ -239,6 +239,20 @@ public class MagicCircleMaker : MonoBehaviour {
                     if (makeCircle)
 					{
                         Quaternion q = Quaternion.LookRotation(Front, Vector3.up);
+                        Front.Normalize();
+                        float dot = Vector3.Dot(Front, Vector3.up);
+                        dot = Mathf.Acos(dot);
+                         float radian = 15.0f;
+
+                        Debug.Log(dot / Mathf.Deg2Rad);
+
+                        if (Mathf.Abs(dot / Mathf.Deg2Rad - 90)  < radian)
+                        {
+                            Front.y = .0f;
+                            Front.Normalize();
+                            q = Quaternion.LookRotation(Front, Vector3.up);
+                        }
+
 						GameObject obj = (GameObject)Instantiate(circle.gameObject, Center, q);
 						float scale = length / circle.GetSize();
                         obj.transform.localScale = new Vector3(scale, scale, scale);
