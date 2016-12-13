@@ -12,8 +12,12 @@ public class moon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timer += 0.001f;
-        transform.position += new Vector3(-0.008f, -0.005f, 0.0f) * timer;
+        if(GameModeManager.instance.scene[(int)GameModeManager.GAMEMODE.START].activeInHierarchy == false)
+        {
+           timer += 0.001f;
+           transform.position += new Vector3(-0.008f, -0.005f, 0.0f) * timer;
+
+        }
 
     }
 }

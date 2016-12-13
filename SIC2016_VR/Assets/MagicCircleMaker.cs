@@ -50,7 +50,14 @@ public class MagicCircleMaker : MonoBehaviour {
 	{
 		lineRender.SetVertexCount(curVertices);
         if(curVertices >= 2)
-		lineRender.SetPositions(point);
+        {
+            for (int i = 0; i < curVertices; i++)
+            {
+                lineRender.SetPosition(i,point[i]);
+            }
+
+
+        }
 
 	}
 	// Use this for initialization

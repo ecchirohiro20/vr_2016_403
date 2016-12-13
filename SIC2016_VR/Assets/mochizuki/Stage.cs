@@ -20,7 +20,8 @@ public class Stage : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        if (GameModeManager.instance.scene[(int)GameModeManager.GAMEMODE.START].activeInHierarchy == false)
+            timer += Time.deltaTime;
         material.SetFloat("_SkyBlend", curve.Evaluate(timer / 60));
         if (timer > 20 ) Destroy(gameObject);
        // Destroy(gameObject);

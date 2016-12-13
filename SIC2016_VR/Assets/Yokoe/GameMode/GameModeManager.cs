@@ -8,8 +8,21 @@ public class GameModeManager : MonoBehaviour
 	public GameObject gameFont;
 	public SteamVR_TrackedObject right;
 	public SteamVR_TrackedObject left;
+    static GameModeManager _instance = null;
+    public static GameModeManager instance
+    {
+        get
+        {
+            if(_instance == null)
+            {
+                _instance = FindObjectOfType<GameModeManager>();
+            }
+            return _instance;
+        }
+    }
 
-	public enum GAMEMODE
+
+    public enum GAMEMODE
 	{
 		START,
 		MAIN,
@@ -76,12 +89,22 @@ public class GameModeManager : MonoBehaviour
 		//MAIN切替時に魔法陣を削除する
 		if(setMode == GAMEMODE.MAIN)
 		{
-			magicSquare[] objects = FindObjectsOfType<magicSquare>();
-			foreach(magicSquare obj in objects)
-			{
-				Destroy(obj.gameObject);
-			}
-		}
+            {
+
+			    magicSquare[] objects = FindObjectsOfType<magicSquare>();
+			    foreach(magicSquare obj in objects)
+			    {
+				    Destroy(obj.gameObject);
+			    }
+            }
+            { 
+                FireBird[] objects = FindObjectsOfType<FireBird>();
+                foreach (FireBird obj in objects)
+                {
+                    Destroy(obj.gameObject);
+                }
+            }
+        }
 	}
     static public GAMEMODE GetMode()
     {
